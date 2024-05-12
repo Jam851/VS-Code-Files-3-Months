@@ -1,1 +1,1 @@
-console.log('Hello World & a message to check existing code committing & pushing');
+console.log('Hello World');
