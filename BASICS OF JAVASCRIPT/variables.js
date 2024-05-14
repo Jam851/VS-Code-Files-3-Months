@@ -1,6 +1,7 @@
 let name = 'Kunal'
 const rollno = 6582
 var email = 'knagrale851@gmail.com'
+//avoid using bcz it can be used outside the block scope
 
 BirthPlace = 'Delhi'
 //variable without keyword
