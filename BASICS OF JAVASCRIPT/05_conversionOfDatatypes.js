@@ -1,7 +1,3 @@
-/*Number
-String
-Boolean*/
-
 //NUMBER
 let score = "33"
 let scoreWithLetters = '33abc'
@@ -23,6 +19,4 @@ let valueForHouseNo = String(houseNo)
 console.log(valueForHouseNo)
 
 
-//BOOLEAN
-
- 
+//BOOLEAN can be done similiarly
