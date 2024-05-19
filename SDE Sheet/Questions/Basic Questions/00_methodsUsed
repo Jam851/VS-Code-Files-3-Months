@@ -1,2 +1,4 @@
 Math.pow()      //for using integers with powers - 2^3
 Math.floor()    //for always rounding down whole numbers - 102.8 becomes 102
+Math.min()      //finds the minimum value between two or more numbers
+Math.max()      //    ,,    maximum     ,,         ,,         ,, 
