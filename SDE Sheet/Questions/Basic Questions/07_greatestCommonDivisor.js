@@ -1,3 +1,50 @@
+//OPTIMAL SOLUTION
+//Using the Euclidean Algorithm
+//      GCD(n1, n2)        =      GCD((n1 - n2), n2)        where (n1 > n2)
+//Striver reduced the formula into 
+//      GCD(n1, n2)        =      GCD((n1 % n2), n2)        where (n1 > n2)
+
+let u1 = 12, u2 = 20
+
+while (u1 != 0 && u2 != 0){
+    if (u1 > u2){
+        u1 = u1 % u2
+    } else {
+        u2 = u2 % u1       
+    }
+
+    if (u1 == 0){
+        console.log(`GCD is: ${u2}`)
+    } else if (u2 == 0){
+        console.log(`GCD is: ${u1}`)
+    }
+}
+
+
+
+
+
+
+//OPTIMAL BRUTE FORCE SOLUTION
+let t1 = 12, t2 = 20    //t1 < t2
+
+//starting loop from the end to ensure always the highest common factor btw the both no.s is chosen as i
+for (let i = t1; i >= 1; i--){      //loop starts from lowest number since a no higher than lower no will never be a common factor
+
+    if (t1 % i == 0 && t2 % i == 0){        //ensures the factor is common btw both numbers chosen
+        console.log(`The GCD is: ${i} \n`)
+        break
+    }
+
+}
+
+
+
+
+
+
+
+//MY SOLUTION
 let n1 = 20, n2 = 12
 let array1 = [], array2 = []
 
