@@ -1,0 +1,25 @@
+.querySelector              = Code
+.querySelectorAll           = Node List
+.getElementById             = Code          ,   .getElementsByClassName       = HTML Collection
+
+
+.style.color                 Appends the class 'style'
+
+Array.from(HTMLCollectionExample)         Converts HTML Collection into an Array
+
+.children                   = HTML Collection
+.firstElementChild          = Code
+.childNodes                 = Node List         [ Includes 'nextLine' as a NodeList Element]
+.parentElement              = Code [includes children, obviously]
+.nextElementSibling         = Code
+
+document.createElement('div')       Creates Element "<div></div>"
+document.body.appendChild(div)      Appends div Element inside of DOM Body
+
+document.createTextNode("")         Creates a Text Node
+
+document.querySelector("li:nth-child(2)")        Faster than going through .querySelectorAll & then going through that Node List
+
+.replaceWith(newli)       Replaces a Node with another
+
+.remove()                 Removes Node
