@@ -23,3 +23,14 @@ document.querySelector("li:nth-child(2)")        Faster than going through .quer
 .replaceWith(newli)       Replaces a Node with another
 
 .remove()                 Removes Node
+
+.getAttribute()
+.setAttribute()
+
+
+.firstChild                Gives first child node   [can be '\n']
+.lastChild                 Gives last child node
+
+.nodeValue                 Gives value of node [used for getting text value, by directly accessing a node without class or id]
+
+.tagName                   Gives HTML UpperCase Element Name

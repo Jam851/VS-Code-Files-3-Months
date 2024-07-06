@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>Please enter your name using lowercase letters only.</p>
+
+        <form>
+            <input type="text" id="my-textbox" autocomplete="off" />
+        
+        </form>
+    </div>
+</body>
+<script>
+    const myTextbox = document.getElementById("my-textbox");
+    myTextbox.addEventListener("keydown", checkName, false);
+
+    function checkName(evt) {
+        const key = evt.key;
+
+        const lowerCaseAlphabet = "abcdefghijklmnopqrstuvwxyz";
+        if (!lowerCaseAlphabet.includes(key)) {
+            evt.preventDefault();
+            
+            console.log(evt.timeStamp)
+        }
+    }
+</script>
+</html>

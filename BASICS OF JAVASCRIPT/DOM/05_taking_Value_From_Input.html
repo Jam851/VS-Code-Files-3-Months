@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1 style="background-color: maroon;">HEADING OF WEBSITE</h1>
+    <label for="number">Type your value: </label>
+    <input type="text" id="number">
+    <input type="button" value="CLICK ME" id="button">
+    
+</body>
+<script>
+    const body = document.querySelector('body')
+    const input = document.querySelector('input')
+
+    document.querySelector('#button').addEventListener('click', ()=>{
+        input.remove()
+        document.querySelector('#button').remove()
+        document.querySelector('label').remove()
+
+        const number = document.createElement('h2')
+        number.innerText = `Your Value is: ${input.value}`
+        body.appendChild(number)
+        
+        console.log(document.querySelector('h1').getAttribute('style'))
+    })
+</script>
+</html>

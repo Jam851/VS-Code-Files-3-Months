@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul id="images">
+        <li><img id="1" width="350px" src="https://s.yimg.com/ny/api/res/1.2/h1auuVM_qZXC1a1bWbV_mw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2022-01/2cadf650-7922-11ec-bff2-6b984c07f6b1" alt="The Inquisitor"></li>
+        <li><img id="2" width="350px" src="https://i.pinimg.com/originals/c6/46/68/c6466819b4d98e81c05f647ff82133a8.jpg" alt="Sanji"></li>
+        <li><img id="3" width="350px" src="img/Robin so Cute.jpg" alt="Robin"></li>
+        <li><img id="4" width="350px" src="img/nah i'd drink.png" alt="Jamie"></li>
+        <li>
+            <label for="fit">Link: </label>
+            <a href="https://fitgirl-repacks.site" id="fit" style="background-color: white;">FitGirl Repacks</a>
+        </li>
+    </ul>
+</body>
+<script>
+    document.querySelector('#images').addEventListener('click', (e)=>{
+
+        if("1234".includes(e.target.id)){
+            console.log(`ListItem: ${e.target.id} is clicked`)
+            e.stopPropagation()
+        // }else{
+            // console.log("UL is clicked")    
+        }
+
+        
+        // console.log(e.currentTarget)
+        // console.log(e.target)
+    })
+
+    document.querySelector('body').addEventListener('click', (e)=>{
+        console.log("UL is clicked")
+    })
+
+
+
+
+
+    console.log(document.querySelector('title').tagName)
+</script>
+</html>

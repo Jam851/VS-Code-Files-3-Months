@@ -1,0 +1,44 @@
+button.addEventListener('click', function(event))            Adds an Event Listener to element & runs callback fn asynchronously based on 'click' event
+                                                            Even after execution of callback fn, it does not stop listening for events
+                                                            [ event parameter is not necessary ]
+event.target                        Only in reference to callback fn above->  Gives the source of the event  
+                                    [ event.target.id will give id ]
+
+event.currentTarget                 Gives the element that has EventHandler attached to it instead of the target of event                                                        
+
+event.preventDefault()              removes the result of the event in the input element based on its type
+
+event.timeStamp                     Gives time period between the command to load website to generation of event
+
+event.stopPropagation()             Stops propagation of event in BubbleUp or Capture Mode to any other EventHandler
+
+
+
+
+layout viewport                     Refers to the viewport without any visual changes [ as programmed ]
+visual viewport                     Refers to the viewport with visual changes  [ zoom in/out ]
+
+keydown.code                        Code for Physical Key on keyboard    [Press F: Recieve F]
+keydown.key                         Gives key registered with the physical key   [Press F: Recieve Y or KKK]                      
+
+movemouse                           Gives X & Y of mouse on Screen & other stuff
+mousedown                           Event occurs when left click is pressed down
+mouseup                             Event occurs when left click is lifted up
+
+.clientX                            X axis Position of Mouse at point of event occurence relative to 'Visual ViewPort'
+.pageX                              same as above but relative to 'Page'
+.screenX                            same as above but relative to the actual monitor
+
+
+
+
+setTimeout( X, Y, Z )           Asynchronous, Runs the function & returns after set time
+                                X = function(){}
+                                Y = time in milliseconds
+                                Z = string by choice [not necessary]
+
+setInterval( X, Y, Z )          Asynchronous, Runs the function &
+                                repeats with interval of set time period
+
+clearTimeout( )                 Stops setTimeout, Reference to specific setTimeout should be provided
+clearInterval( )                same as above with a caveat

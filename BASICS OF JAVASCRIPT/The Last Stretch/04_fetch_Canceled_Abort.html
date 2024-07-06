@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="fetch">FETCH</button>
+    <button id="cancel">STOP FETCH</button>
+</body>
+<script>
+    const url = "https://api.github.com/users/Jam851"
+    const controller = new AbortController();
+
+    async function myrequest(){
+    try {
+        console.log("Starting fetch");
+        const response = await fetch(url, {
+        signal: controller.signal,
+        });
+        console.log(`Response: ${response.status}`);
+    } catch (e) {
+        console.error(`Error: ${e}`);
+    }
+    }
+
+    //Fetch Starts
+    const fetchButton = document.querySelector("#fetch");
+    fetchButton.addEventListener("click", myrequest);
+
+    //Fetch Canceled
+    const cancelButton = document.querySelector("#cancel");
+    cancelButton.addEventListener("click", () => {
+    controller.abort();
+    console.log("Canceled fetch");
+    });
+</script>
+</html>

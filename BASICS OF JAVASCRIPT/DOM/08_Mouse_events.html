@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nothing.</h1>
+    <h1></h1>
+    <h1></h1>
+</body>
+<script>
+    const body = document.querySelector('body')
+    const msg1 = document.querySelector('h1')
+    const msg2 = document.querySelector('h1').nextElementSibling
+    const msg3 = document.querySelectorAll('h1')[2]
+
+    document.addEventListener('mousemove', (e)=>{
+    // Client || ViewPort
+        msg1.innerHTML = `CLIENT-> X: ${e.clientX},  Y: ${e.clientY}`
+    
+    // Page
+        msg2.innerHTML = `PAGE-> X: ${e.pageX},  Y: ${e.pageY}`
+
+    // Screen
+        msg3.innerHTML = `SCREEN-> X: ${e.screenX},  Y: ${e.screenY}`
+    })
+</script>
+</html>
