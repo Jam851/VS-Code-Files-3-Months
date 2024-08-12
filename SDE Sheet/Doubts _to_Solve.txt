@@ -1,0 +1,10 @@
+-how to use 'process.stdout.write' ?
+function printList(head) {
+    let current = head;
+    while (current !== null) {
+        process.stdout.write(current.val + " ");
+        current = current.next;
+    }
+    console.log();
+}
+

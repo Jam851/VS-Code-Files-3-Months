@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <style>
+    table{
+        width: 90%;
+        text-align: center;
+        border-collapse: collapse;
+        color: rgb(255, 255, 255);
+    }
+    td,th{
+        border: 1px solid rgb(0, 0, 0);
+        padding: 5px;
+    }
+    tr{
+        background-color: rgb(58, 58, 193);
+    }
+    /* body{
+        background-color: rgb(32, 31, 31);
+        color: white;
+    } */
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Items</th>      <!--scope is used for screenreaders to identify context for 'Items' is their column & not row-->
+                <th scope="col">Urgency</th>
+                <th scope="col">Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Ketchup</th>
+                <td>Yes</td>
+                <td>120</td>
+            </tr>
+            <tr>
+                <th scope="row">Mustard</th>
+                <td>No</td>
+                <td>60</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2", scope="row">Total</th>     <!--colspan for assigning 2 cell space to 'Total'-->
+                <th>180</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+<script>
+</script>
+</html>

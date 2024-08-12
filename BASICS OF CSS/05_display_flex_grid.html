@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex_&_grid</title>
+    <style>
+        /* FLEX CSS */
+        .flex-container{
+            font-size: 3em;
+            border: solid black 1px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .flex-container>div, span{
+            background-color: aquamarine;
+            border: solid black; 
+        }
+        /* GRID CSS */
+        .grid-container{
+            font-size: 3em;
+            border: solid black 1px;
+            display: grid;
+            justify-content: space-around;
+            grid: auto-flow / repeat(2, auto);
+        }
+        .grid-container>div{
+            background-color: rgb(255, 111, 109);
+            border: solid black;
+            margin: 5px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three
+          <br>has
+          <br>extra
+          <br>text
+        </div>
+        <span>Four</span>
+    </div>
+    
+    <div class="grid-container">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three
+          <br>has
+          <br>extra
+          <br>text
+        </div>
+    </div>
+</body>
+</html>

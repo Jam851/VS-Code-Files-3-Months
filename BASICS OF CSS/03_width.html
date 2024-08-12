@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Width</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+        p{
+            background-color: bisque;
+            color: black;
+            border: 3px solid rgb(255, 0, 0);
+        }
+        #in-em{
+            width: 15em;           
+        }
+        #maxwidth-minwidth{
+            width: 15em;
+            max-width: min-content;            
+        }
+        div{
+            background-color: rgb(120, 217, 247);
+            color: black;
+            border: 3px solid rgb(174, 0, 255);
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <p id="in-em">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita voluptatum tempore reprehenderit accusantium maiores aperiam fugit odio omnis magnam incidunt nobis perferendis, atque facere quo.</p>
+    <p id="maxwidth-minwidth">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita voluptatum tempore reprehenderit accusantium maiores aperiam fugit odio omnis magnam incidunt nobis perferendis, atque facere quo.</p>
+
+    <div id="parent">
+        <p id="child" style="width: 50%; margin: 0px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, iure. Distinctio reprehenderit doloribus fugiat? Consectetur id nihil minus dicta praesentium assumenda veritatis mollitia? Deserunt voluptates odio quae ipsam pariatur sapiente.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+[lang^="en"]                                          A selector to select specific attribute of 'lang = "en-gb"'
+*   /   *.pp                                          Universal Selector   /   Selects all tags with 'pp' class
+@namespace                                            Is used to refer to a tag which is present in more than 1 type of file & only one from a specific file is to be selected
+                                                      [ HTML does not use tags exclusively ]
+div.style.display                                     even if display property of style did not exist, then it will create it & add what is specified for it
+(parent-selector)>(child-selector)                    Selects all direct children of parent selector in CSS       [ eg- .color>div ]
+
+
+CSS PROPERTIES->
+color: blue                                           colors the text with blue
+border: 1px solid blue                                colors border blue with 1 px solid line
+display: (outer) (inner)                              put on container element with many inner elements within, arranges inner & outer flow layouts
+      [: block flex]                                  [ if only 'outer display type' is specified then inner is 'flex' by default. vice versa is 'block'  ]
+float: left                                           floats the selected tag on the left side of its contaning block
+clear: left                                           select an html tag that is to be placed below another tag, then the selected html tag is sent below the floated tag on the left side
+                                                      [ selected tag is 'cleared' off of the left side tags containing block to below it]
+                                                      [ cleared below past elements, later floats will be placed below this cleared tag ]
+width: 20px or 20em                                   tag with text/content is selected. width of said content is changed with measurements or percentages or relative lengths
+                                                      [ em is width of the internal font size of tag ]      [ total dist. from left to right ]
+                                                      [ when child width is 50%, it takes half the width of its parent tag ]
+box-sizing: border-box                                makes the content box & border fit within a specified width.      [ & padding ]
+            content-box                               makes the content box of specified width. Its border width is unaccounted for here.
+margin: 2px 1em 0 auto                                [ top | right | bottom | left ]     [ if only 1em, then it applies on all 4 sides ]       [ -ve values for moving tag in said direction ]
+Margins create extra space around an element, unlike padding, which creates extra space within an element.
+padding is the space between the content and its border
+padding: 10px 50px 30px 0
+Margin Collapsing - Collapse Margin size is the largest of the individual top & bottom margins unless both are equal.
+                    [ margins of 'floating' and 'absolutely positioned' elements never collapse ]     [ for more read its mdn ]
+height: 50px                                          same as width
+[ 0 to 255 in RGB ]
+background-color: rgb(255, 255, 120)      |     rgba(r, g, b, 0.5)      |      transparent      |      hexvalue      |      currentcolor
+color                                                 same as 'background-color'                  
+Maintain Web Accesibility Standards
+background:                                           shorthand for bg related CSS properties which can be used together under only 1 property, specific format should be used as mentioned in its mdn
+                                                      [ background-image, background-position, background-repeat, etc ]       [ has default values for each one, if any one is not mentioned ]
+border-radius: 10px 0 30px 40px                       [ top-left | top-right | bottom-right | bottom-left ]       To manipulate border roundness
+                                                      [ is applied on background so if border is present or not doesn't matter ]
+             : 20% / 50%                              [ for ellipses -> https://www.youtube.com/watch?v=E0UfGiLvvpI ]
+font-family: "Gill Sans", sans-seif;                  [ "Font Family Name", General Family Name ]     General name is keyword so need not to be put in a string data type
+                                                      General font names should be entered last as backup.
+font:                                                 [ <'font-style'> || <font-variant-css2> || <'font-weight'> || <font-width-css3> ]? <font-size> [ / <line-height> ]? <font-family> |
+                                                      Basically, font-size & font-family [in that order] are non-negotiables & everything else is optional [in any order as long as they precede font-size, except line-height]
+FLEX BOX
+display: flex                                         set on container tag & flex is applied on child elements. Changes block to inline elements. align-items: stretch is set as default
+flex-direction: row                                   The direction in which the child elements are arranged & seen on the website. 'display: flex' has this property set as default. It changes the Main Axis of flex to either row or column or 'reverse' of both
+Main Axis                                             is row or horizontal by default. Changed using "flex-direction" property.
+Cross Axis                                            is column or vertical by default. Always perpendicular to Main Axis
+start                                                 [ parallel edge of main axis on left becomes start & vice versa for end ] if justify-content is used & in it 'start' is used then it means that items will stick to the left edge from the top as long as 'row' is the flex-direction 
+justify-content: space-between                        Arranges the position & space between items along the main axis in relation to other items or the container element's edges.      [ Executed along the Main Axis ]      [ Used on display 'grid' or 'flex' tags ]
+align-items: stretch                                  [ Executed along the Cross Axis ]       [ Used on display 'grid' or 'flex' tags ]
+                                                      changes the position of items relative to their height & container's height.
+flex-wrap: nowrap                                     default value. if changed to 'wrap' then it will put any items that overflow to the next line of flex container.
+                                                      [ Note: (not sure what this means exactly) If you do this, you should consider each line as a new flex container. Any space distribution will happen across each line, without reference to the previous or subsequent lines. ]
+flex-basis: auto  |     100px                         default is 'auto' which takes the content's space. it is the space occupied by item on screen that is being 'shrunk' or 'grown'. 
+                                                      Completely different from padding or margin.                                      
+flex-grow: 1                                          default value is set to 'auto'. applied to whole flex container or specific item. 
+                                                      if there is any space available in container then the item with this property will take that space.
+                                                      the space taken depends on the how many other items also have this ratio of space granted to them & by what ratio (as in the number). 
+flex-shrink: 1                                        same as 'flex-grow' but these items shrink only & only if there is overflow. An item can shrink down to its min-content size.
+flex: 1 1 auto                                        shorthand allows you to set the three values in this order — flex-grow, flex-shrink, flex-basis.
+
+
+
+
+
+
+TO LOOK UP ->
+grid
+absolutely positioned elements & similar
+
+
+'html' can also be a container
+
+
+.floating + *
+div:nth-of-type(n + 9)              this and one below from from examples of- https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content 
+div:nth-last-of-type(3)

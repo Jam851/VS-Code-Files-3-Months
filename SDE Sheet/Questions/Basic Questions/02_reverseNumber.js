@@ -1,3 +1,19 @@
+// OPTIMISED CODE
+let n = 10400
+let revNum = 0
+
+while(n>0){
+    let lastDigit = n % 10
+    revNum = (revNum*10) + lastDigit
+    n = Math.floor(n / 10)
+}
+console.log(revNum)
+
+
+
+
+
+// MY UNOPTIMISED CODE
 let originalNumber = 10400 
 let reversedNumber = ""
 
@@ -16,10 +32,10 @@ while (loopChecker){
     }
 
     let currentRemainder = remainder    //remainder needs to stay the same so it could be used in the next iteration as it is
-
     if(loopCounter != 1){
         currentRemainder = currentRemainder - previousRemainder         //turning any remainder value into a multiple of 10
         currentRemainder = currentRemainder / Math.pow(10, (loopCounter - 1))      //dividing the remainder value that is a multiple of 10 with appropriate power of 10 to get the next 10s place in the original integer
+   
     }
 
     reversedNumber += currentRemainder  //recording the appropriate integer value to the reversed order
