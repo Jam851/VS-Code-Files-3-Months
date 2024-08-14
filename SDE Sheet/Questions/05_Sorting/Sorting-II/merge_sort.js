@@ -1,8 +1,8 @@
-//create array of 8 [then of 9]
 //using recursion - merge sort -> divide & merge
 //pointers for first & last element of array that is divided [also mid]
 //temp array to be used when merging
-//base case
+//base case should be at the top
+//merging fn -> sorting & merging           merge_sort fn -> breaking array
 
 
 // const array = [1, 5, 3, 9, 8, 2, 5, 12]               //[8 elements]
@@ -42,17 +42,14 @@ const merging = function(array, first, last, mid){
     }
 
 //PUHSHING REMAINING VALUES INTO TEMP ARRAY
-    if(array[left] && left <= mid){
         while(left <= mid){
             temp.push(array[left])
             left++
         }
-    } else {
         while(right <= last){
             temp.push(array[right])
             right++
         }        
-    }
 
 //ACTUALLY PUSHING TEMP ARRAY ELEMENTS BACK ONTO THE ORIGINAL ARRAY
     for(let i = 0; i<temp.length; i++){
