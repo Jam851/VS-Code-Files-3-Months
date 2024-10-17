@@ -24,7 +24,7 @@ const merge_sort = function(array, first, last){
 
 
 const merging = function(array, first, last, mid){
-    //POINTERS FOR COMPARISON
+//POINTERS FOR COMPARISON
     let left = first
     let right = mid+1
 
@@ -41,7 +41,7 @@ const merging = function(array, first, last, mid){
         }
     }
 
-//PUHSHING REMAINING VALUES INTO TEMP ARRAY
+//PUSHING REMAINING VALUES INTO TEMP ARRAY
         while(left <= mid){
             temp.push(array[left])
             left++

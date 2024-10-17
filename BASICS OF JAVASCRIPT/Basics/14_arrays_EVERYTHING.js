@@ -26,7 +26,7 @@ const myArray1 = new Array(1,2,3,4,5)
 
 //JOIN
 // const newArr = myArray1.join('-')          //1-2-3-4-5
-//Joins the array into a string. Must be put in a new array. By default seperator is ',' comma
+// Joins the array into a string. Must be put in a different variable. By default seperator is ',' comma
 
 //SLICE
 // let newArr = myArray1.slice(0,3)    
@@ -34,9 +34,19 @@ const myArray1 = new Array(1,2,3,4,5)
 // console.log(myArray1)               //[ 1, 2, 3, 4, 5 ]     Original array remains the same
 
 //SPLICE   [ Special Slice ]
-// newArr = myArray1.splice(0,3)       
+// splice(start, deleteCount, item1, item2 & on)
+// (1) Removal
+// newArr = myArray1.splice(0,3)
 // console.log(newArr)                 //[ 1, 2, 3 ]           ,,      ,,      ,,      ,,
 // console.log(myArray1)               //[ 4, 5 ]              Original array changes. The part that gets sliced is removed from the original array
+// (2) Insertion
+// myArray1.splice(1, 0, newArr)                                                  //AND ->//myArray1.splice(1, 0, ...newArr)
+// console.log(myArray1)              //[ 4, [ 1, 2, 3 ], 5 ]                             // console.log(myArray1)           //[ 4, 1, 2, 3, 5 ]
+// Starts from index 1 & deletes 0 number of elements so it simply inserts item1
+// (3) Replace
+// myArray1.splice(3, 1, 10)
+// console.log(myArray1)              //[ 4, 1, 2, 10, 5 ]
+// Starts from index 3 & removes 1 element & in its place puts 10
 
 
 

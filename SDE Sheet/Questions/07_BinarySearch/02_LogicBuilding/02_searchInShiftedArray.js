@@ -1,35 +1,32 @@
-function TotalQuestions(n){
-    const str = n
-    const strlength = str.length
-    let counter = Ccounter = 0
-    // let Ccounter = 0
+/*
+Given an integer array nums, sorted in ascending order (with distinct values) and a target value k. 
+The array is rotated at some pivot point that is unknown. Find the index at which k is present and if k is not present return -1.
 
-    for(let i = 0; i<strlength; i++){
-        if(str[i] == "."){
-            counter++
-        } else if (str[i] == ","){
-            Ccounter++
-        }
-    }
-    // console.log(counter + (Ccounter*0.1))
-}
+Example 1 ->
+nums = [4, 5, 6, 7, 0, 1, 2]
+k = 0
+Output = 4
 
-const n = ""
-TotalQuestions(n)
-/////////////////////////////////////////////////////////////
+Example 2 ->
+nums = [3,1,2,3,3,3,3]
+k = 1
+Output = 1
+*/
+
 function search(nums, k) {
     let low = 0;
     let high = nums.length - 1;
 
     while (low <= high) {
         let mid = Math.floor((low + high) / 2);
-        console.log(mid)
+
         // Check if mid points to the target
         if (nums[mid] === k){
-            return true
+            return mid
         }
-        //////////////
-        if (arr[low] === arr[mid] && arr[mid] === arr[high]) {
+        
+        // If Duplicates are present in the array
+        if (nums[low] === nums[mid] && nums[mid] === nums[high]) {
             low = low + 1;
             high = high - 1;
             continue;
@@ -38,7 +35,7 @@ function search(nums, k) {
         // Check if the left part is sorted
         if (nums[low] <= nums[mid]){
             // Target exists in the left sorted part
-            if((nums[low] <= k && k <= nums[mid])){
+            if(nums[low] <= k && k <= nums[mid]){
                 high = mid - 1;   
             } 
             else {
@@ -58,10 +55,10 @@ function search(nums, k) {
     }
 
     // If target is not found
-    return false
+    return -1
 }
 
-let nums = [3,1,2,3,3,3,3]
-let k = 1
+let nums = [-55,-54,-31,-13,2,79,85,97,99,-98,-97,-84,-59]
+let k = -31
 
 console.log(search(nums, k))

@@ -1,16 +1,53 @@
-map - key: value pairs
-set - collection of unique values like array, does not allow duplicates of values
+Map() - Data Structure that stores values as keys & does not allow duplicates. It stores duplicates as values
+Set() - Data Structure which does not allow duplicates & is always sorted
 Palindrome - strings that are the same when read backwards
 Armstrong - Digits of armstrong when powered by the OG number's total digits get added up, they form the armstrong number itself
-
+Reverse Pair - An index pair (i, j) is called a reverse pair if:
+                  -0 <= i < j < nums.length
+                  -nums[i] > 2 * nums[j]
+Binary Search can only be applied on sorted Arrays
 
 
 LEARNINGS ->
 • O(log10(N)) - Time Complexity for when input is divided by 10 for N times
-• The most time to solve a problem is taken up by 'actual' coding instead of making 
-  the plan to solve it.
+
 • O(n) > O(log n)			[ by an exponential margin ]
-• Array in js can be sorted using a method 
+
+• Array.sort() in js sorts the array
    let arr = [1, 4, 0, 5, 10, 9]
    arr.sort((a, b) => a - b)
-• 
+
+• Array.map() is used to execute a function on each element of array & return the modified array
+  const array1 = [1, 4, 9, 16]
+  const map1 = array1.map((x) => x * 2)
+  output for map1 => [2, 8, 18, 32]
+
+• Maps -> get, set, has
+  initialise -    let map = new Map()
+  set        -    map.set(key, value)
+  get        -    map.get(key)           returns value
+  has        -    map.has(key)           returns boolean value
+   
+  and iterators like .keys()
+  to convert from map to array             let array = Array.from(myMap.keys())
+
+• Array.reverse() is used to reverse an array
+
+• Array.fill() - To fill an array with elements
+  let n = 3;
+  let newArr = new Array(n).fill().map(() => new Array(n).fill(0))
+  console.log(newArr)
+
+• 2D Arrays can only be compared by comparing each individual element by iterating on them
+  or by JSON.stringify() them and comparing the strings
+
+• XOR Operator [^] ->   1 [001]   ^   5 [101]   =   4 [100]
+
+• Remove all '1' bits except rightmost '1' bit in a number(n)
+  n & ~(n - 1)
+
+
+
+
+-In Array Problems - Sorting before solving, Using Pointers for traversing - makes the problem easier
+-XOR can help when dealing with duplicates of numbers.
