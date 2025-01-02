@@ -65,9 +65,14 @@ const dc_heroes     = ["superman", "flash", "batman"]
 
 
 //SPREAD
+// (1) Spreads Data
+// const all_Spread_Heroes = ...marvel_heroes                      //thor ironman spiderman
+// After breaking down the array, Js treats each element individually. 
+// This is why (2) can be performed.
+// (2) Used within brackets '[]' of array data structure
 // const all_Spread_Heroes = [...marvel_heroes, ...dc_heroes]      //[ 'thor', 'ironman', 'spiderman', 'superman', 'flash', 'batman' ]
-//Same as 'concat' method, can handle more than just two arrays.
-//Concatenates multiple arrays
+// Same as 'concat' method, can handle more than just two arrays.
+// Concatenates multiple arrays
 
 
 //FLAT

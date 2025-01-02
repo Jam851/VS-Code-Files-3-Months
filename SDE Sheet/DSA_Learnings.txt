@@ -46,6 +46,14 @@ LEARNINGS ->
 • Remove all '1' bits except rightmost '1' bit in a number(n)
   n & ~(n - 1)
 
+• Math.abs(2 - 1)       //Output: 1
+Gives positive value for any internal arithmetic operation
+
+• array1.reduce((accumulator, currentValue) => accumulator + currentValue,   initialValue)
+Executes a callback Fn on each element of array.
+It starts from 1st index. 
+Accumulator is the value that is returned from the previous iteration of the callback.
+Initial Value is the starting value of accumulator which when not defined is defaulted to 0th element of array. 
 
 
 
