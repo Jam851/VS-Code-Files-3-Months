@@ -1,4 +1,4 @@
-//You cannot have duplicate column names in a table.
+1. You cannot have duplicate column names in a table.
 
 # Databases
 SHOW DATABASES;
@@ -24,6 +24,7 @@ CREATE TABLE <table name> (
 // to create a new table.
 <dataType> : INTEGER, DECIMAL(10, 2), VARCHAR(15), DATE, ENUM("Male", "Female", "Other")
 <descriptors> : DEFAULT <default value>, NOT NULL
+                [ 'id INT AUTO_INCREMENT PRIMARY KEY' to make a numeric column id which auto-increments on new entry. ]
 
 INSERT INTO <table name> (<column names>[in order]) VALUES (<values>[in order]);       
 [ for multiple entries: VALUES (<values for entry 1>), (<values for entry 2>), ... ]
@@ -63,18 +64,20 @@ DELETE FROM <table name> WHERE <condition statement> (usually with a LIMIT);
 UPDATE <table name> SET <column name 1> = <value 1>, <column name 2> = <value 2> WHERE <condition statement>;
 // updates entries which pass the condition statement. Usually an ID is used to be more precise but anything goes.
 
-ALTER TABLE <table name> CHANGE <table name> <new table name> = <new dataType>;
-// changes column name & its dataType. The column values accomodate to the new dataType if they can logically can.
-   for eg: INTEGER can accomodate DECIMAL & VARCHAR but,
-           VARCHAR cannot accomodate DECIMALS or INTEGER  
-
 ALTER TABLE <table name> ADD <new column name> <dataType>;
 // adds new column to table. Its default value & other descriptors can be attached to this command.
    [ places new column at the end of the table horizontally. ]
-   To place new column after a specific column, attach 'AFTER <column name>' at the end of above command.
+   AFTER <column name>: To place new column after a specific column, attach at the end of above command.
+   FIRST: To place new column at the front of table
 
 ALTER TABLE <table name> DROP <column name>;
 // removes column & its data from table.
+
+ALTER TABLE <table name> CHANGE <column name> <new column name> <new dataType>;
+// changes column name, dataType & descriptors. 
+   the column values accomodate to the new dataType if they logically can.
+   for eg: INTEGER can accomodate DECIMAL & VARCHAR but,
+           VARCHAR cannot accomodate DECIMALS or INTEGER
 
 SELECT <column name> AS <different column name> FROM <table name>;
 // selects existing column and shows it with <different column name>.
@@ -107,3 +110,5 @@ SELECT MAX()            ,,              ,,              ,,              ,,
 
 SELECT <column name 1>, Count(*) FROM <table name> GROUP BY <column name 1>;
 // returns a table of 2 columns containing the number of times the <column name 1> values have occured in the table.
+
+Change table name ?
