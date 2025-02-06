@@ -1,4 +1,8 @@
 1. You cannot have duplicate column names in a table.
+2. Attributes = Columns,   Tuples = Rows
+3. '\sql', '\js', '\python' to change language in MySQL Shell
+4. '\c root@localhost' command to connect to localhost server.
+5. All commands end with ';'
 
 # Databases
 SHOW DATABASES;
@@ -110,5 +114,42 @@ SELECT MAX()            ,,              ,,              ,,              ,,
 
 SELECT <column name 1>, Count(*) FROM <table name> GROUP BY <column name 1>;
 // returns a table of 2 columns containing the number of times the <column name 1> values have occured in the table.
+
+
+# Joins
+//Right Joins & Inner Join
+   The columns are of both tables are joined together into one massive table.
+   If <common column name> has values which are common in both tables, then these common value rows are selected for the common part of join.
+   The rows from the right table are all present even if there values are not present/common in the left table. These values are NULL.
+   The left table's rows that are not part of the rows which have common values are ignored & will not be present in the combined table.
+   Important part is that in Right Join only Right table's rows are present in full.
+   If no <common column name> is provided then it gives Cartesian Product of all entries. [no matter what join type]
+
+SELECT * FROM <table name 1> RIGHT JOIN <table name 2> ON <table name 1>.<common column name> = <table name 2>.<common column name>;
+// selects columns from the query table produced from right joining <table name 1> on <table name 2>.
+
+SELECT * FROM <table name 1> LEFT JOIN <table name 2> USING(<common column name>)
+// alternate method of selecting <common column name>.
+
+SELECT * FROM <table name 1>, <table name 2> WHERE <table name 1>.<common column name> = <table name 2>.<common column name>;
+// inner join without excplicitly using inner join.
+
+# Self Join 
+SELECT * FROM <table name> a INNER JOIN <table name> b USING (id);
+// selects everything from inner join of the table with itself.
+
+SELECT a.<column y>, b.<column x> FROM <table name> a INNER JOIN <table name> b USING (id);
+// selects two distinct columns from both distinct but same table.
+
+
+
+(SELECT * FROM employeedetails) UNION (SELECT * FROM testtable);
+// merges all rows into one table. The total rows increase but columns remains same. 
+   [ both queries must have same no of columns for UNION to work. ]
+   left table comes first with its column names, right table comes below it.
+
+
+
+
 
 Change table name ?
