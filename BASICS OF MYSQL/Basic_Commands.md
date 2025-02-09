@@ -62,6 +62,9 @@ SELECT * FROM <table name> ORDER BY <column name> DESC;
 SELECT * FROM <table name> LIMIT 2;
 // only selects the top 2 entries from the query.
 
+SELECT * FROM <table name> OFFSET 10;
+// ignores the first 10 rows & selects the 11th row till Nth row of the query.
+
 DELETE FROM <table name> WHERE <condition statement> (usually with a LIMIT);
 // only deletes selected table entries that pass the condition statement.
 
@@ -158,11 +161,72 @@ SELECT a.<column y>, b.<column x> FROM <table name> a INNER JOIN <table name> b 
    Work-around: LEFT JOIN of two tables UNION RIGHT JOIN of two tables after switching their places in the command, gives a FULL OUTER JOIN in mysql.
 
 
+# View
+Command to create one 
+
+# Stored Procedure
+// Store Function & Call later.
+   DELIMITER changes the delimiter of mysql to any other character.
+DELIMITER #
+CREATE PROCEDURE <procedure name>()
+BEGIN
+   select * from <table name> limit 10;
+   END #
+DELIMITER ;
+
+CALL <procedure name>();
+
+
+SHOW PROCEDURE STATUS WHERE db = '<database name>';
+// shows all details of procedures in db.
+
+
+CRAZY 1 & 2
+
+
+# Triggers
+// like an event
+
+SHOW TRIGGERS;
+// shows all triggers in DB.
+
+
+TRIGGER_1 ->
+USE <database>
+
+delimitter $
+CREATE TRIGGER <trigger name>
+BEFORE INSERT ON <table name>
+for each row
+   set @log = "adding new product";
+$
+delimiter ;
+// for each row to be inserted in table, set @log in statement. 
+
+SELECT @log
+// shows the value stored in @log
+
+
+TRIGGER_2 ->
+USE <database>
+
+delimitter $
+CREATE TRIGGER <trigger name>
+BEFORE INSERT ON <table name>
+for each row
+   set New.productCost = 1;
+$
+delimitter ;
+// changes the productCost attribute value to 1 in each new row. where 'New' is the new row created.      ( similar to this keyword in JS )
+
+
+# Hooks
+// used in place of creating lots of code for triggers.
+
 
 
 PRI - Primary Key
 MUL - Non-Unique value. multiple occurences of that value can be present in that column.
-
 
 //What is MUL ?
 Change table name ?
