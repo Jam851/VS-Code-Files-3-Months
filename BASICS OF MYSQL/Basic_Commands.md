@@ -164,9 +164,8 @@ SELECT a.<column y>, b.<column x> FROM <table name> a INNER JOIN <table name> b 
 # View
 Command to create one 
 
+
 # Stored Procedure
-// Store Function & Call later.
-   DELIMITER changes the delimiter of mysql to any other character.
 DELIMITER #
 CREATE PROCEDURE <procedure name>()
 BEGIN
@@ -175,13 +174,16 @@ BEGIN
 DELIMITER ;
 
 CALL <procedure name>();
+// Store Function & Call later.
+   DELIMITER changes the delimiter of mysql to any other character. can be set to hash, dollar.
 
 
 SHOW PROCEDURE STATUS WHERE db = '<database name>';
 // shows all details of procedures in db.
 
+1) 
 
-CRAZY 1 & 2
+
 
 
 # Triggers
@@ -190,16 +192,15 @@ CRAZY 1 & 2
 SHOW TRIGGERS;
 // shows all triggers in DB.
 
-
-TRIGGER_1 ->
+1) 
 USE <database>
 
-delimitter $
+delimitter %
 CREATE TRIGGER <trigger name>
 BEFORE INSERT ON <table name>
 for each row
    set @log = "adding new product";
-$
+%
 delimiter ;
 // for each row to be inserted in table, set @log in statement. 
 
@@ -207,17 +208,19 @@ SELECT @log
 // shows the value stored in @log
 
 
-TRIGGER_2 ->
+2) 
 USE <database>
 
-delimitter $
+delimitter %
 CREATE TRIGGER <trigger name>
 BEFORE INSERT ON <table name>
 for each row
    set New.productCost = 1;
-$
+%
 delimitter ;
 // changes the productCost attribute value to 1 in each new row. where 'New' is the new row created.      ( similar to this keyword in JS )
+
+
 
 
 # Hooks
