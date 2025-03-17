@@ -1,3 +1,5 @@
+//In JS if a function does not return something manually, it will automatically return undefined.
+
 function sentence(name, verb){    //name & verb are parameters
     console.log(name + ' & his buddies just ' + verb + ' a couple members of the enemy group...')
 }

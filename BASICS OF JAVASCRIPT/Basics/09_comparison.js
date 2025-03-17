@@ -17,4 +17,4 @@ console.log(null == 0)  //does not convert [wierd behaviour]
 console.log(null >= 0)  //converts.....
 
 console.log("2" == 2)   //converts string to number
-console.log("2" === 2)  //triple equal checks data type also & doesn not convert
+console.log("2" === 2)  //triple equal checks data type also but does not convert
