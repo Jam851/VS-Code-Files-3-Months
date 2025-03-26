@@ -17,3 +17,11 @@ console.log(arrayofcolors.length)
 
 let colorpicked = arrayofcolors[0];
 console.log(colorpicked)
+
+
+
+//Destructuring in Arrays
+const arr = [56, "Hello"]
+const [num, msg] = arr
+
+console.log(`\nElements of array are: ${num} & ${msg}`)
